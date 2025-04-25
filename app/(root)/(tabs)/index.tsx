@@ -6,6 +6,8 @@ export default function Index() {
         <Text className="text-3xl text-blue-500 font-bold">Welcome to the</Text>
         <Text className="text-7xl text-blue-800 font-extrabold">FISHERMAN!</Text>
         <Text className="text-2xl text-black italic">we catch | we eat | repeat</Text>
+
+        <Text className="text-3xl text-black font-bold">WELCOME</Text>
     </View>
   );
 }
