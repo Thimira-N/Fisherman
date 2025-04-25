@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Animated, { FadeInUp, FadeOutUp } from 'react-native-reanimated';
 import { Eye, EyeOff } from "lucide-react-native";
+import { useRouter } from 'expo-router';
 import images from '@/constants/images';
 import icons from '@/constants/icons';
 
@@ -19,10 +20,16 @@ const SignIn = () => {
 
     const [passwordVisible, setPasswordVisible] = useState(false);
 
+    const router = useRouter();
+
+    const handleRegister = () => {
+        router.push('/register');
+    }
+
     return (
         <SafeAreaView className="bg-white h-full">
             <ImageBackground
-                source={images.signin}
+                source={images.image5}
                 resizeMode="cover"
                 blurRadius={3}
                 className="flex-1 px-10 justify-between"
@@ -117,16 +124,16 @@ const SignIn = () => {
                                 </TouchableOpacity>
                             </View>
 
-                            <Text className="text-lg font-rubik text-black-200 text-center mt-6">
-                                don't have an account? {"\t"}
-                                <Text className="text-primary-300">Register</Text>
-                            </Text>
-
-                            <TouchableOpacity className="bg-primary-300 p-4 rounded-full mt-4">
+                            <TouchableOpacity className="bg-primary-300 p-4 rounded-full mt-2">
                                 <Text className="text-center text-white font-rubik-bold text-lg">
                                     Login
                                 </Text>
                             </TouchableOpacity>
+
+                            <Text className="text-lg font-rubik text-black-200 text-center mt-6">
+                                Don't have an account?{" "}
+                                <Text onPress={handleRegister} className="text-primary-300">Register</Text>
+                            </Text>
                         </View>
                     </Animated.View>
                 )}
