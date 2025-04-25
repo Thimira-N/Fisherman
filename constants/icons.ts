@@ -1,4 +1,4 @@
-// import google from "@/assets/icons/google.png";
+import google from "@/assets/icons/signin/google.png";
 import home from "@/assets/icons/tabs/home.png";
 import weather from "@/assets/icons/tabs/weather.png";
 import market from "@/assets/icons/tabs/market.png";
@@ -12,7 +12,7 @@ import fishingb from "@/assets/icons/tabs/fishingb.png";
 
 
 export default {
-  // google,
+  google,
   home,
   weather,
   market,
