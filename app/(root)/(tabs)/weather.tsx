@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import CurrentWeatherScreen from '../CurrentWeatherScreen';
-import WeatherForecastScreen from '../WeatherForecastScreen';
-import StormTrackerScreen from '../StormTrackerScreen';
-import WaterSafetyScreen from '../WaterSafetyScreen';
+import CurrentWeatherScreen from '../(weather)/CurrentWeatherScreen';
+import WeatherForecastScreen from '../(weather)/WeatherForecastScreen';
+import StormTrackerScreen from '../(weather)/StormTrackerScreen';
+import WaterSafetyScreen from '../(weather)/WaterSafetyScreen';
 
 const tabs = [
     { id: 1, title: 'Current' },
@@ -33,11 +33,16 @@ const WeatherSection = () => {
 
     return (
         <SafeAreaView className="bg-white h-full">
+            <Text className="text-3xl text-center font-rubik-extrabold text-primary-300 mt-2">W E A T H E R</Text>
             {/* Tabs */}
-            <View className="flex-row justify-around bg-primary-50 p-3 rounded-b-3xl">
+            <View className="flex-row justify-around items-center bg-primary-200 p-5 rounded-3xl mt-5">
                 {tabs.map((tab) => (
-                    <TouchableOpacity key={tab.id} onPress={() => setActiveTab(tab.id)}>
-                        <Text className={`text-base font-bold ${activeTab === tab.id ? 'text-primary-300' : 'text-black-200'}`}>
+                    <TouchableOpacity
+                        key={tab.id}
+                        onPress={() => setActiveTab(tab.id)}
+                        className={`${activeTab === tab.id ? 'bg-primary-300 px-4 py-3 rounded-full' : 'bg-white/90 px-4 py-3 rounded-full'}`}
+                    >
+                        <Text className={`text-base font-rubik-bold ${activeTab === tab.id ? 'text-white' : 'text-black-200'}`}>
                             {tab.title}
                         </Text>
                     </TouchableOpacity>

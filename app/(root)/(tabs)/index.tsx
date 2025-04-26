@@ -19,7 +19,7 @@ import {Link} from "expo-router";
 const Home = () => {
     const loading = false;
 
-    const user = { name: 'Kasun', avatar: 'https://your-avatar-url.com' };
+    const user = { name: 'Thimira', avatar: 'https://your-avatar-url.com' };
 
     // Just rendering placeholders instead of real data
     const dummyQuickActions = new Array(4).fill(null).map((_, index) => ({ id: index.toString() }));
@@ -56,9 +56,9 @@ const Home = () => {
                         {/* --- Market Prices --- */}
                         <View className="mt-6">
                             <View className="flex-row justify-between items-center mb-2">
-                                <Text className="text-xl font-bold text-black-300">Market Prices</Text>
+                                <Text className="text-xl font-rubik-bold text-black-300">Market Prices</Text>
                                 <TouchableOpacity>
-                                    <Text className="text-base font-bold text-primary-300">See All</Text>
+                                    <Text className="text-base font-rubik-bold text-primary-300">See All</Text>
                                 </TouchableOpacity>
                             </View>
 
@@ -99,6 +99,7 @@ const Home = () => {
                             <Link href="/help" className="text-3xl text-blue-500 font-rubik-bold">HELP</Link>
                             <Link href="/notifications" className="text-3xl text-blue-500 font-rubik-bold">NOTIFICATIONS</Link>
                             <Link href="/profile" className="text-3xl text-blue-500 font-rubik-bold">PROFILE</Link>
+                            <Link href="/settings" className="text-3xl text-blue-500 font-rubik-bold">SETTINGS</Link>
                         </View>
                     </View>
                 }
