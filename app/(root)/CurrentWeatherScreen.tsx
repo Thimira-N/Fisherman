@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
-import images from "@/constants/images";
+import icons from "@/constants/icons";
 
 const CurrentWeatherScreen = () => {
     return (
         <ScrollView className="px-5 py-3">
             {/* Weather animation or static image */}
-            <Image source={images.image2} className="h-40 w-full mb-5" resizeMode="contain" />
+            <Image source={icons.sunny} className="h-40 w-full mb-5" resizeMode="contain" />
 
             {/* Temperature */}
             <Text className="text-5xl font-bold text-primary-300 text-center">32°C</Text>
