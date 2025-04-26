@@ -10,7 +10,7 @@ const tips = [
 ];
 
 export default function TipsScreen() {
-    const [expanded, setExpanded] = useState(null);
+    const [expanded, setExpanded] = useState(false);
 
     return (
         <ScrollView className="px-5 pt-3">

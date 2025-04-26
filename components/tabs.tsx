@@ -2,12 +2,12 @@ import { View, TouchableOpacity, Text, Animated } from 'react-native';
 import { useState, useRef } from 'react';
 import React from 'react';
 
-export function Tabs({ defaultValue, children, className }) {
+export function Tabs({ defaultValue, children, className } : any) {
     const [activeTab, setActiveTab] = useState(defaultValue);
 
     return (
         <View className={className}>
-            {children.map((child) => {
+            {children.map((child : any) => {
                 if (child.type.name === 'TabsList') {
                     return React.cloneElement(child, { activeTab, setActiveTab });
                 }
@@ -20,17 +20,17 @@ export function Tabs({ defaultValue, children, className }) {
     );
 }
 
-export function TabsList({ children, activeTab, setActiveTab, className }) {
+export function TabsList({ children, activeTab, setActiveTab, className } : any ) {
     return (
         <View className={`flex-row ${className}`}>
-            {children.map((child) =>
+            {children.map((child : any) =>
                 React.cloneElement(child, { activeTab, setActiveTab })
             )}
         </View>
     );
 }
 
-export function TabsTrigger({ value, children, activeTab, setActiveTab, className }) {
+export function TabsTrigger({ value, children, activeTab, setActiveTab, className } : any ) {
     const isActive = activeTab === value;
     return (
         <TouchableOpacity
@@ -44,6 +44,6 @@ export function TabsTrigger({ value, children, activeTab, setActiveTab, classNam
     );
 }
 
-export function TabsContent({ children }) {
+export function TabsContent({ children } : any ) {
     return <View className="p-2">{children}</View>;
 }

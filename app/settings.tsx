@@ -61,31 +61,31 @@ const Settings = () => {
                     <Text className="text-base font-rubik-medium text-gray-500 mb-3">App Preferences</Text>
                     <SettingsItem icon={icons.theme} title="Theme" description="Light, Dark, or High Contrast" />
                     <SettingsItem icon={icons.fontSize} title="Font Size" description="Adjust text size" />
-                    <SettingsItem icon={icons.dataSaver} title="Data Usage" description="Optimize mobile data" />
+                    <SettingsItem icon={icons.dataUsage} title="Data Usage" description="Optimize mobile data" />
                 </View>
 
                 {/* Notification Settings */}
                 <View className="mb-5 border-t border-primary-200 pt-5">
                     <Text className="text-base font-rubik-medium text-gray-500 mb-3">Notifications</Text>
                     <SettingsItem icon={icons.weather} title="Weather Alerts" description="Manage severe weather updates" />
-                    <SettingsItem icon={icons.priceAlert} title="Market Price Alerts" description="Get notified about price changes" />
+                    <SettingsItem icon={icons.marketPrice} title="Market Price Alerts" description="Get notified about price changes" />
                     <SettingsItem icon={icons.message} title="Messages" description="New inquiry notifications" />
-                    <SettingsItem icon={icons.news} title="News Updates" description="Select categories to follow" />
+                    <SettingsItem icon={icons.newsUpdate} title="News Updates" description="Select categories to follow" />
                 </View>
 
                 {/* Offline Mode */}
                 <View className="mb-5 border-t border-primary-200 pt-5">
                     <Text className="text-base font-rubik-medium text-gray-500 mb-3">Offline Mode</Text>
-                    <SettingsItem icon={icons.cache} title="Content Caching" description="Save important data offline" />
-                    <SettingsItem icon={icons.storage} title="Storage Usage" description="Manage app storage" />
+                    <SettingsItem icon={icons.contentCaching} title="Content Caching" description="Save important data offline" />
+                    <SettingsItem icon={icons.storageUsage} title="Storage Usage" description="Manage app storage" />
                     <SettingsItem icon={icons.clearCache} title="Clear Cache" description="Free up space" />
                 </View>
 
                 {/* Battery Optimization */}
                 <View className="mb-5 border-t border-primary-200 pt-5">
                     <Text className="text-base font-rubik-medium text-gray-500 mb-3">Battery Optimization</Text>
-                    <SettingsItem icon={icons.battery} title="Background Activity" description="Manage app refresh frequency" />
-                    <SettingsItem icon={icons.location} title="Location Settings" description="Adjust location tracking" />
+                    <SettingsItem icon={icons.backgroundActivity} title="Background Activity" description="Manage app refresh frequency" />
+                    <SettingsItem icon={icons.locationSettings} title="Location Settings" description="Adjust location tracking" />
                     <SettingsItem icon={icons.sync} title="Sync Schedule" description="Optimize background sync" />
                 </View>
 

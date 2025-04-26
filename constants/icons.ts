@@ -13,7 +13,7 @@ import fishingb from "@/assets/icons/tabs/fishingb.png";
 import bell from "@/assets/icons/profile/bell.png";
 import calendar from "@/assets/icons/profile/calendar.png";
 import info from "@/assets/icons/profile/info.png";
-import language from "@/assets/icons/profile/language.png";
+// import language from "@/assets/icons/profile/language.png";
 import people from "@/assets/icons/profile/people.png";
 import person from "@/assets/icons/profile/person.png";
 import rightArrow from "@/assets/icons/profile/right-arrow.png";
@@ -30,6 +30,24 @@ import storm from "@/assets/icons/weather/storm.png";
 import sunny from "@/assets/icons/weather/sunny.png";
 import visibility from "@/assets/icons/weather/visibility.png";
 import wave from "@/assets/icons/weather/wave.png";
+
+import backgroundActivity from "@/assets/icons/settings/background-activity.png";
+import clearCache from "@/assets/icons/settings/clear-cache.png";
+import contentCaching from "@/assets/icons/settings/content-caching.png";
+import dataUsage from "@/assets/icons/settings/data-usage.png";
+import fontSize from "@/assets/icons/settings/font-size.png";
+import language from "@/assets/icons/settings/language.png";
+import locationSettings from "@/assets/icons/settings/location-settings.png";
+import logout from "@/assets/icons/settings/logout.png";
+import marketPrice from "@/assets/icons/settings/market-price.png";
+import message from "@/assets/icons/settings/message.png";
+import newsUpdate from "@/assets/icons/settings/news-update.png";
+import password from "@/assets/icons/settings/password.png";
+import privacy from "@/assets/icons/settings/privacy.png";
+import storageUsage from "@/assets/icons/settings/storage-usage.png";
+import sync from "@/assets/icons/settings/sync.png";
+import theme from "@/assets/icons/settings/theme.png";
+import weatherAlerts from "@/assets/icons/settings/weather-alerts.png";
 
 
 export default {
@@ -48,7 +66,7 @@ export default {
   bell,
   calendar,
   info,
-  language,
+  // language,
   people,
   person,
   rightArrow,
@@ -65,4 +83,22 @@ export default {
   sunny,
   visibility,
   wave,
+
+  backgroundActivity,
+  clearCache,
+  contentCaching,
+  dataUsage,
+  fontSize,
+  language,
+  locationSettings,
+  logout,
+  marketPrice,
+  message,
+  newsUpdate,
+  password,
+  privacy,
+  storageUsage,
+  sync,
+  theme,
+  weatherAlerts,
 };

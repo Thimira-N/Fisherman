@@ -23,8 +23,8 @@ const users = {
 export default function ConnectScreen() {
     const [search, setSearch] = useState('');
 
-    const filteredUsers = (category) =>
-        users[category].filter((user) =>
+    const filteredUsers = (category: any) =>
+        users[category].filter((user : any ) =>
             user.name.toLowerCase().includes(search.toLowerCase())
         );
 
@@ -60,7 +60,7 @@ export default function ConnectScreen() {
                 {/* Fishermen */}
                 <TabsContent value="fishermen">
                     <ScrollView className="p-4 space-y-4">
-                        {filteredUsers('fishermen').map((user) => (
+                        {filteredUsers('fishermen').map((user : any) => (
                             <ContactCard key={user.id} user={user} />
                         ))}
                     </ScrollView>
@@ -69,7 +69,7 @@ export default function ConnectScreen() {
                 {/* Buyers */}
                 <TabsContent value="buyers">
                     <ScrollView className="p-4 space-y-4">
-                        {filteredUsers('buyers').map((user) => (
+                        {filteredUsers('buyers').map((user : any) => (
                             <ContactCard key={user.id} user={user} />
                         ))}
                     </ScrollView>
@@ -78,7 +78,7 @@ export default function ConnectScreen() {
                 {/* Providers */}
                 <TabsContent value="providers">
                     <ScrollView className="p-4 space-y-4">
-                        {filteredUsers('providers').map((user) => (
+                        {filteredUsers('providers').map((user : any) => (
                             <ContactCard key={user.id} user={user} />
                         ))}
                     </ScrollView>
@@ -87,7 +87,7 @@ export default function ConnectScreen() {
                 {/* Officials */}
                 <TabsContent value="officials">
                     <ScrollView className="p-4 space-y-4">
-                        {filteredUsers('officials').map((user) => (
+                        {filteredUsers('officials').map((user : any) => (
                             <ContactCard key={user.id} user={user} />
                         ))}
                     </ScrollView>
@@ -97,7 +97,7 @@ export default function ConnectScreen() {
     );
 }
 
-function ContactCard({ user }) {
+function ContactCard({ user } : any ) {
     return (
         <View className="bg-white rounded-2xl shadow-md p-4 flex-row items-center">
             <Image source={user.avatar} style={{ width: 60, height: 60, borderRadius: 30 }} />
