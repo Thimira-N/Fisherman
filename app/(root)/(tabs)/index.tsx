@@ -8,6 +8,7 @@ import {
     ActivityIndicator,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native-gesture-handler';
 import icons from '@/constants/icons';
 import WeatherCard from '@/components/WeatherCard';
 import NewsTicker from '@/components/NewsTicker';
@@ -15,52 +16,84 @@ import ProcurementCard from '@/components/ProcurementCard';
 import QuickAction from '@/components/QuickAction';
 import MarketCard from '@/components/MarketCard';
 import {Link} from "expo-router";
+import images from "@/constants/images";
+import StatusBadge from "@/components/utils/StatusBadge";
+import WaterSafetyBand from "@/components/dashboard/WaterSafetyBand";
+import GlassCard from "@/components/common/GlassCard";
+import CompassWindWidget from "@/components/dashboard/CompassWindWidget";
+import StormAlertWidget from "@/components/dashboard/StormAlertWidget";
+import AIBotTip from "@/components/dashboard/AIBotTip";
+import SectionTitle from "@/components/utils/SectionTitle";
+import AIFishermanBot from "@/components/dashboard/AIFishermanBot";
+import QuickActionsGrid from "@/components/dashboard/QuickActionsGrid";
 
 const Home = () => {
     const loading = false;
 
-    const user = { name: 'Thimira', avatar: 'https://your-avatar-url.com' };
+    const user = { name: 'Thimira', avatar: images.favicon };
 
-    // Just rendering placeholders instead of real data
-    const dummyQuickActions = new Array(4).fill(null).map((_, index) => ({ id: index.toString() }));
     const dummyMarketData = new Array(5).fill(null).map((_, index) => ({ id: index.toString() }));
 
     return (
         <SafeAreaView className="bg-white h-full">
-            <FlatList
-                data={dummyQuickActions}
-                keyExtractor={(item) => item.id}
-                numColumns={4}
-                contentContainerStyle={{ paddingBottom: 100 }}
-                columnWrapperStyle={{ gap: 12, paddingHorizontal: 20 }}
-                showsVerticalScrollIndicator={false}
-                ListHeaderComponent={
-                    <View className="px-5">
+            <ScrollView showsVerticalScrollIndicator = {false} >
+
+                    <View className="px-5 mb-24">
                         {/* --- Profile Header --- */}
                         <View className="flex-row justify-between items-center mt-5">
                             <View className="flex-row items-center">
-                                <Image source={{ uri: user.avatar }} className="size-12 rounded-full" />
+                                {/*<Image source={{ uri: user.avatar }} className="size-12 rounded-full" />*/}
+                                <Image source={user.avatar} className="size-12 rounded-full" />
                                 <View className="ml-2">
                                     <Text className="text-xs text-black-100">Good Morning</Text>
-                                    <Text className="text-base font-semibold text-black-300">{user.name}</Text>
+                                    <Text className="text-base font-rubik-semibold text-black-300">{user.name}</Text>
                                 </View>
                             </View>
+
+                            <View className="flex-row gap-5 justify-between items-center mr-4">
+                                <View className="items-center">
+                                    <Text className="text-black-300 font-rubik-bold text-2xl">Colombo Coast</Text>
+                                    <Text className="text-black-200 font-rubik-medium text-md">Apr 27 | 10:45 AM</Text>
+                                </View>
+                                <View>
+                                    <StatusBadge status="Danger" />
+                                </View>
+                            </View>
+
                             <Image source={icons.bell} className="size-6" />
                         </View>
 
+                        <WaterSafetyBand status="Safe" />
+
                         {/* --- Weather Card --- */}
-                        <View className="mt-5">
-                            <WeatherCard />
+                        <GlassCard>
+                            <View className="flex-row justify-around items-center">
+                                <View>
+                                    <Text className="text-base font-rubik-semibold text-black-200 mb-2">Temperature:</Text>
+                                    <Text className="text-5xl font-rubik-extrabold text-primary-300">28°C</Text>
+                                </View>
+
+                                <View>
+                                    <Text className="text-base font-rubik-semibold text-black-200">Wind:</Text>
+                                    <CompassWindWidget direction="NE" speed="14" />
+                                </View>
+                            </View>
+
+                            <View className="items-center">
+                                <StormAlertWidget level={3} message="Caution: Storm approaching East Bay" />
+                            </View>
+
+                            <AIBotTip tip="🐟 Best time to fish today is 4AM - 7AM near coastal reefs." />
+                        </GlassCard>
+
+                        {/* --- News Ticker --- */}
+                        <View className="mt-6">
+                            <NewsTicker />
                         </View>
 
                         {/* --- Market Prices --- */}
-                        <View className="mt-6">
-                            <View className="flex-row justify-between items-center mb-2">
-                                <Text className="text-xl font-rubik-bold text-black-300">Market Prices</Text>
-                                <TouchableOpacity>
-                                    <Text className="text-base font-rubik-bold text-primary-300">See All</Text>
-                                </TouchableOpacity>
-                            </View>
+                        <View>
+                            <SectionTitle title="Market Prices" />
 
                             {loading ? (
                                 <ActivityIndicator size="large" className="text-primary-300" />
@@ -76,20 +109,19 @@ const Home = () => {
                             )}
                         </View>
 
-                        {/* --- News Ticker --- */}
-                        <View className="mt-6">
-                            <NewsTicker />
-                        </View>
-
                         {/* --- Procurement --- */}
-                        <View className="mt-6">
-                            <Text className="text-xl font-bold text-black-300 mb-2">Procurement</Text>
+                        <View className="gap-3">
+                            <SectionTitle title="Procurement" />
+                            <ProcurementCard />
+                            <ProcurementCard />
+                            <ProcurementCard />
+                            <ProcurementCard />
                             <ProcurementCard />
                         </View>
 
-                        {/* --- Quick Actions Title --- */}
-                        <View className="mt-6 mb-2">
-                            <Text className="text-xl font-bold text-black-300">Quick Actions</Text>
+                        <View className="w-full h-fit mt-6">
+                            <Text className="text-lg font-rubik-bold text-black-300">Fishermen Assistant</Text>
+                            <AIFishermanBot />
                         </View>
 
                         <View className="flex-1 justify-center items-center">
@@ -101,12 +133,20 @@ const Home = () => {
                             <Link href="/profile" className="text-3xl text-blue-500 font-rubik-bold">PROFILE</Link>
                             <Link href="/settings" className="text-3xl text-blue-500 font-rubik-bold">SETTINGS</Link>
                         </View>
+
+                        <View className="mt-6">
+                            <Text className="text-lg font-rubik-bold text-black-300">Quick Actions</Text>
+                            <QuickActionsGrid />
+                        </View>
+
                     </View>
-                }
-                renderItem={() => <QuickAction />}
-            />
+
+            </ScrollView>
         </SafeAreaView>
     );
 };
 
 export default Home;
+
+
+

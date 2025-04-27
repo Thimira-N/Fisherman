@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import icons from "@/constants/icons";
+import MapView, {Marker, PROVIDER_GOOGLE} from "react-native-maps";
 
 const WaterSafetyScreen = () => {
     return (
-        <ScrollView className="px-5 py-3">
+        <ScrollView className="px-5 py-3 mb-20">
 
             {/* Wave Height Section */}
             <View className="bg-primary-50 p-5 rounded-2xl shadow-md mb-6">
@@ -47,8 +48,34 @@ const WaterSafetyScreen = () => {
             {/* Danger Zones Map */}
             <View className="bg-primary-50 p-5 rounded-2xl shadow-md mb-6">
                 <Text className="text-xl font-bold text-red-500 mb-4">Danger Zones</Text>
-                <View className="bg-white h-48 rounded-2xl flex items-center justify-center relative">
-                    <Image source={icons.mapPlaceholder} className="w-full h-full rounded-2xl absolute" resizeMode="cover" />
+                {/*<View className="bg-white h-48 rounded-2xl flex items-center justify-center relative">*/}
+                {/*    <Image source={icons.mapPlaceholder} className="w-full h-full rounded-2xl absolute" resizeMode="cover" />*/}
+
+                <View className="h-60 rounded-2xl overflow-hidden">
+                    <MapView
+                        provider={PROVIDER_GOOGLE}
+                        style={{ flex: 1 }}
+                        initialRegion={{
+                            // Centered over Sri Lanka (adjust as needed)
+                            latitude: 7.8731,
+                            longitude: 80.7718,
+                            latitudeDelta: 1.0,
+                            longitudeDelta: 2.0,
+                        }}
+                        showsCompass
+                        loadingEnabled
+                        showsMyLocationButton
+                        zoomControlEnabled
+                    >
+                        {/* Example: place a marker for the storm's current position */}
+                        <Marker
+                            coordinate={{ latitude: 8.0, longitude: 81.0 }}
+                            title="Storm Center"
+                            description="Tropical storm ETA: 48 hrs"
+                            pinColor="#f97316"
+                        />
+                        {/* You can map over your storm-tracker data here to add more markers or polylines */}
+                    </MapView>
                     <Text className="text-red-500 font-bold">Danger Areas Marked</Text>
                 </View>
             </View>

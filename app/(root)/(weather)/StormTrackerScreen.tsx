@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import icons from "@/constants/icons";
 
 const storms = [
@@ -14,13 +15,38 @@ const StormTrackerScreen = () => {
             {/* Map Section */}
             <View className="bg-primary-50 rounded-2xl shadow-md p-4 mb-8">
                 <Text className="text-xl font-bold text-primary-300 mb-4">Storm Map</Text>
-                <View className="bg-white h-60 rounded-2xl flex items-center justify-center relative">
-                    {/* Mock Map */}
-                    <Image source={icons.mapPlaceholder} className="w-full h-full rounded-2xl absolute" resizeMode="cover" />
+                {/*<View className="bg-white h-60 rounded-2xl flex items-center justify-center relative">*/}
+                    {/*/!* Mock Map *!/*/}
+                {/*<Image source={icons.mapPlaceholder} className="w-full h-full rounded-2xl absolute" resizeMode="cover" />*/}
+                <View className="h-60 rounded-2xl overflow-hidden">
+                    <MapView
+                        provider={PROVIDER_GOOGLE}
+                        style={{ flex: 1 }}
+                        initialRegion={{
+                            // Centered over Sri Lanka (adjust as needed)
+                            latitude: 7.8731,
+                            longitude: 80.7718,
+                            latitudeDelta: 1.0,
+                            longitudeDelta: 2.0,
+                        }}
+                        showsCompass
+                        loadingEnabled
+                        showsMyLocationButton
+                        zoomControlEnabled
+                    >
+                        {/* Example: place a marker for the storm's current position */}
+                        <Marker
+                            coordinate={{ latitude: 8.0, longitude: 81.0 }}
+                            title="Storm Center"
+                            description="Tropical storm ETA: 48 hrs"
+                            pinColor="#f97316"
+                        />
+                        {/* You can map over your storm-tracker data here to add more markers or polylines */}
+                    </MapView>
 
                     {/* Boat Icon */}
                     <View className="absolute top-[50%] left-[45%]">
-                        <Image source={icons.boat} className="size-8" />
+                        <Image source={icons.boat} className="size-8" tintColor="#F32013" />
                         <Text className="text-xs text-black-100">You</Text>
                     </View>
 

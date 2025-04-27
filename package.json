@@ -32,6 +32,7 @@
     "expo-system-ui": "~4.0.9",
     "expo-web-browser": "~14.0.2",
     "lucide-react-native": "^0.503.0",
+    "moti": "^0.30.0",
     "nativewind": "^4.1.23",
     "react": "18.3.1",
     "react-dom": "18.3.1",
@@ -47,7 +48,8 @@
     "react-native-svg": "15.8.0",
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
-    "victory-native": "^41.17.1"
+    "victory-native": "^41.17.1",
+    "lottie-react-native": "7.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
