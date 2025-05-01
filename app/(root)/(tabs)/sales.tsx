@@ -27,7 +27,7 @@ const TabItem = ({ title, active, onPress, badgeCount }: TabItemProps) => (
 );
 
 const ListingCard = ({ item }: { item: any }) => (
-    <View className="bg-white rounded-2xl p-4 shadow-md mb-4">
+    <View className="bg-white/50 rounded-2xl p-4 shadow-md mb-4">
         <View className="flex flex-row gap-4">
             <Image source={{ uri: item.image }} className="w-24 h-24 rounded-lg" />
 
@@ -36,7 +36,7 @@ const ListingCard = ({ item }: { item: any }) => (
                     <Text className="text-lg font-rubik-bold">{item.species}</Text>
                     <Text className="text-sm text-gray-500">{item.quantity} Available</Text>
                     <Text className="text-base font-rubik-medium text-primary-300 mt-1">
-                        ${item.price} (Market: ${item.marketPrice})
+                        Rs. {item.price} (Market: Rs. {item.marketPrice})
                     </Text>
                 </View>
 

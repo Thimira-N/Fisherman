@@ -56,7 +56,7 @@ const Home = () => {
                                     <Text className="text-black-200 font-rubik-medium text-md">Apr 27 | 10:45 AM</Text>
                                 </View>
                                 <View>
-                                    <StatusBadge status="Danger" />
+                                    <StatusBadge status="Safe" />
                                 </View>
                             </View>
 

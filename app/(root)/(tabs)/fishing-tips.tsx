@@ -23,8 +23,7 @@ const FishingTips = () => {
     };
 
     return (
-        <LinearGradient colors={['#dbeafe', '#f0f9ff']} style={{ flex: 1 }}>
-            <SafeAreaView className="flex-1">
+            <SafeAreaView className="flex-1 bg-white1">
 
                 {/* Title */}
                 <Text className="text-3xl text-center font-rubik-extrabold text-primary-300 mt-2">C O M M U N I T Y</Text>
@@ -90,7 +89,6 @@ const FishingTips = () => {
                 </PagerView>
 
             </SafeAreaView>
-        </LinearGradient>
     )
 }
 export default FishingTips

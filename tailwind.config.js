@@ -29,6 +29,10 @@ module.exports = {
           300: '#191d31',
         },
         danger: '#F75555',
+        // safe: '#5CE65C',
+        safe: '#50C878',
+        safe1: '#21B564',
+        white1: '#F8FAFC',
       }
     },
   },
